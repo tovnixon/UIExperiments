@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xWD-gO-ix0">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="f4f-FP-beZ">
+            <objects>
+                <navigationController id="xWD-gO-ix0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ogw-En-SeE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7vM-3a-FIw" kind="relationship" relationship="rootViewController" id="vlk-7A-lRU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3fd-nD-u2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46" y="91"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jkI-TB-eO9">
+            <objects>
+                <viewController id="7vM-3a-FIw" customClass="ViewController" customModule="NavBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j2T-zY-PFD"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Di-4W-fSS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TKq-qt-ZjC">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LEJ-cT-05j">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7vM-3a-FIw" id="y2z-J7-yeu"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mp1-fV-lpM" userLabel="BottomView">
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wrc-AN-dcN">
+                                        <segments>
+                                            <segment title="Rooms"/>
+                                            <segment title="Conversations"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="251-sI-0Ns"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wrc-AN-dcN" secondAttribute="bottom" constant="14" id="D5i-Vz-7SK"/>
+                                    <constraint firstItem="Wrc-AN-dcN" firstAttribute="top" secondItem="Mp1-fV-lpM" secondAttribute="top" constant="13" id="F9D-HF-Hmi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wrc-AN-dcN" secondAttribute="trailing" constant="16" id="FRX-jM-raI"/>
+                                    <constraint firstItem="Wrc-AN-dcN" firstAttribute="leading" secondItem="Mp1-fV-lpM" secondAttribute="leading" constant="16" id="iag-Fn-o59"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LEJ-cT-05j" firstAttribute="top" secondItem="j2T-zY-PFD" secondAttribute="bottom" constant="-54" id="0rC-Mk-e28"/>
+                            <constraint firstItem="LEJ-cT-05j" firstAttribute="leading" secondItem="TKq-qt-ZjC" secondAttribute="leadingMargin" constant="-16" id="ALY-JG-msJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LEJ-cT-05j" secondAttribute="trailing" constant="-16" id="OEX-YZ-11Y"/>
+                            <constraint firstItem="Mp1-fV-lpM" firstAttribute="leading" secondItem="TKq-qt-ZjC" secondAttribute="leading" id="ZqS-I7-Lh2"/>
+                            <constraint firstItem="7Di-4W-fSS" firstAttribute="top" secondItem="LEJ-cT-05j" secondAttribute="bottom" id="bAl-8h-2Kk"/>
+                            <constraint firstItem="Mp1-fV-lpM" firstAttribute="top" secondItem="j2T-zY-PFD" secondAttribute="bottom" id="kTq-7H-j7V"/>
+                            <constraint firstAttribute="trailing" secondItem="Mp1-fV-lpM" secondAttribute="trailing" id="utK-Ez-xaa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tyX-FT-CM4">
+                        <barButtonItem key="backBarButtonItem" title="1" id="0Gn-uj-qAQ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="RGm-RP-biC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bottomView" destination="Mp1-fV-lpM" id="wPr-vi-bKc"/>
+                        <outlet property="chooseRoom" destination="Wrc-AN-dcN" id="Njo-1a-IL5"/>
+                        <outlet property="tableView" destination="LEJ-cT-05j" id="wnC-nJ-rkx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bkx-8s-x4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656.79999999999995" y="89.505247376311857"/>
+        </scene>
+    </scenes>
+</document>
